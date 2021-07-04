@@ -2,13 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>top</title>
     <link rel="stylesheet" href="base.css">
 </head>
 <body>
-<p class="test">
-    test
-</p>
+
+<video id="video"></video>
+
+<div class="video-data" data-filename="mov_hts-samp001.mp4" data-subtitle="chapter1.vtt"></div>
+<div class="video-data" data-filename="mov_hts-samp004.mp4" data-subtitle="chapter2.vtt"></div>
+
+<div id="menu-top">
+    <button class="control-button" type="button">再生</button>
+    <button class="control-button" type="button">一時停止</button>
+    <button class="control-button" type="button">字幕ON</button>
+</div>
+<div id="menu-bottom">
+    <button class="control-button" type="button">次の動画</button>
+    <button class="control-button" type="button">前の動画</button>
+</div>
+
 <script src="base.js"></script>
 </body>
 </html>

@@ -1,3 +1,30 @@
-.test {
-    color: red;
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#video {
+    border: 1px solid black;
+    width: 100vw;
+}
+
+#menu-top {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#menu-bottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.control-button {
+    margin: 0 10px;
+    padding: 8px 12px;
 }
