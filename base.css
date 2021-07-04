@@ -7,18 +7,23 @@ body {
     box-sizing: border-box;
 }
 
-#video {
+.video-container {
     border: 1px solid black;
     width: 100vw;
+    height: 50vh;
 }
 
-#menu-top {
+video {
+    width: 100%;
+}
+
+.menu-top {
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
 
-#menu-bottom {
+.menu-bottom {
     margin-top: 20px;
     display: flex;
     justify-content: center;
