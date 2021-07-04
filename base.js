@@ -29,6 +29,13 @@ window.onload = () => {
             return video
         })
 
+    let currentVideoIndex = 0
+
     const videoContainer = s('.video-container')
-    videoContainer.appendChild(videoList[0])
+    videoContainer.appendChild(videoList[currentVideoIndex])
+
+    const playButton = s('.play-button')
+    playButton.onclick = () => {
+        videoList[currentVideoIndex].play()
+    }
 }
