@@ -28,14 +28,53 @@ window.onload = () => {
             video.appendChild(track)
             return video
         })
-
     let currentVideoIndex = 0
+    let currentVideo = videoList[currentVideoIndex]
+    let subtitle =
 
     const videoContainer = s('.video-container')
     videoContainer.appendChild(videoList[currentVideoIndex])
 
     const playButton = s('.play-button')
     playButton.onclick = () => {
-        videoList[currentVideoIndex].play()
+        currentVideo.textTracks[0].mode = "disabled"
+        currentVideo.play()
+    }
+
+    const pauseButton = s('.pause-button')
+    pauseButton.onclick = () => {
+        currentVideo.pause()
+    }
+
+    const subtitleOnButton = s('.subtitle-on-button')
+    subtitleOnButton.onclick = () => {
+        currentVideo.textTracks[0].mode = "showing"
+    }
+
+    const subtitleOffButton = s('.subtitle-off-button')
+    subtitleOffButton.onclick = () => {
+        currentVideo.textTracks[0].mode = "disabled"
+    }
+
+    const nextButton = s('.next-button')
+    nextButton.onclick = () => {
+        if (currentVideoIndex === videoList.length - 1) {
+            return
+        }
+        currentVideo.remove()
+        currentVideoIndex += 1
+        currentVideo = videoList[currentVideoIndex]
+        videoContainer.appendChild(currentVideo)
+    }
+
+    const prevButton = s('.prev-button')
+    prevButton.onclick = () => {
+        if (currentVideoIndex === 0) {
+            return
+        }
+        currentVideo.remove()
+        currentVideoIndex -= 1
+        currentVideo = videoList[currentVideoIndex]
+        videoContainer.appendChild(currentVideo)
     }
 }

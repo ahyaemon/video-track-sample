@@ -23,6 +23,12 @@ video {
     justify-content: center;
 }
 
+.menu-middle {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
 .menu-bottom {
     margin-top: 20px;
     display: flex;
