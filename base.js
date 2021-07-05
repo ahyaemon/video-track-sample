@@ -30,14 +30,19 @@ window.onload = () => {
         })
     let currentVideoIndex = 0
     let currentVideo = videoList[currentVideoIndex]
-    let subtitle =
+    let isSubtitleShowing = false
 
     const videoContainer = s('.video-container')
     videoContainer.appendChild(videoList[currentVideoIndex])
 
     const playButton = s('.play-button')
     playButton.onclick = () => {
-        currentVideo.textTracks[0].mode = "disabled"
+        console.log(isSubtitleShowing)
+        if (isSubtitleShowing) {
+            currentVideo.textTracks[0].mode = "showing"
+        } else {
+            currentVideo.textTracks[0].mode = "disabled"
+        }
         currentVideo.play()
     }
 
@@ -48,11 +53,13 @@ window.onload = () => {
 
     const subtitleOnButton = s('.subtitle-on-button')
     subtitleOnButton.onclick = () => {
+        isSubtitleShowing = true
         currentVideo.textTracks[0].mode = "showing"
     }
 
     const subtitleOffButton = s('.subtitle-off-button')
     subtitleOffButton.onclick = () => {
+        isSubtitleShowing = false
         currentVideo.textTracks[0].mode = "disabled"
     }
 
