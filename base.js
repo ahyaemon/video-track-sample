@@ -9,6 +9,7 @@ function sa(selector) {
 function createVideoElement(filename) {
     const videoElement = document.createElement('video')
     videoElement.src = filename
+    videoElement.playsInline = true
     return videoElement
 }
 
