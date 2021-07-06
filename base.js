@@ -38,12 +38,12 @@ window.onload = () => {
 
     const playButton = s('.play-button')
     playButton.onclick = () => {
-        console.log(isSubtitleShowing)
         if (isSubtitleShowing) {
             currentVideo.textTracks[0].mode = "showing"
         } else {
             currentVideo.textTracks[0].mode = "disabled"
         }
+        console.log(currentVideo)
         currentVideo.play()
     }
 
